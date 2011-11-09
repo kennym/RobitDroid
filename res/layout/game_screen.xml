@@ -3,7 +3,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
-
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Pick a number between 0 and 10 without speaking it out loudly."
+            />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Let Robit guess your number."
+            />
     <GridView
             android:id="@+id/gridview"
             android:layout_width="fill_parent"

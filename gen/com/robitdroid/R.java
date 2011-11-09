@@ -13,9 +13,11 @@ public final class R {
 
     public static final class drawable {
         public static final int icon = 0x7f020000;
+        public static final int robit = 0x7f020001;
     }
 
     public static final class id {
+        public static final int ImageViewRobit = 0x7f050005;
         public static final int btn_no = 0x7f050004;
         public static final int btn_yes = 0x7f050003;
         public static final int final_number = 0x7f050000;
