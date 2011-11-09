@@ -32,7 +32,7 @@ public class Generator {
      * @return ArrayList
      */
     public ArrayList<Integer> generateNumbers(int limit) {
-        ArrayList numbers = new ArrayList();
+        ArrayList<Integer> numbers = new ArrayList();
         for (int j = 1; j <= limit; j++) {
             if (((j & 1 << this.step_number) <= 0) || (this.random_bit != 1)) {
                 if (((j & 1 << this.step_number) != 0) || (this.random_bit == 1)) {
@@ -126,5 +126,9 @@ public class Generator {
 
     public void setRandom_bit(int val) {
         this.random_bit = val;
+    }
+
+    public int getFinal_number() {
+        return this.final_number;
     }
 }

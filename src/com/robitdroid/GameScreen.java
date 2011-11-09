@@ -2,6 +2,7 @@ package com.robitdroid;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,8 @@ public class GameScreen extends Activity {
     private Generator generator = Generator.getInstance();
     private Adapter adapter;
 
+    private int step_number = 0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +27,29 @@ public class GameScreen extends Activity {
     }
 
     public void yesButtonClick(View view) {
-        Log.v("ROBIT", "Yes button clicked.");
+        Log.v("ROBIT", "'Yes' button clicked.");
         this.generator.yes();
+        step_number++;
         refreshGrid();
+
+        if (step_number >= 4) {
+            showFinalScreen(view);
+        }
     }
 
     public void noButtonClick(View view) {
-        Log.v("ROBIT", "No button clicked.");
+        Log.v("ROBIT", "'No' button clicked.");
         this.generator.no();
+        step_number++;
         refreshGrid();
+        if (step_number >= 4) {
+            showFinalScreen(view);
+        }
+    }
+
+    private void showFinalScreen(View view) {
+        Intent i = new Intent(view.getContext(), FinalScreen.class);
+        startActivity(i);
     }
 
     private void refreshGrid() {
