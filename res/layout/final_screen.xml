@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
 
     <TextView
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:text="Robit says your final number is:"
             />
     <TextView
             android:id="@+id/final_number"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:text=""
             />
-
+    <Button
+            android:id="@+id/restart_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="restartButtonClicked"
+            android:text="Restart"
+            />
+    <Button
+            android:id="@+id/restart_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToMainMenuButtonClicked"
+            android:text="Go to main menu"
+            />
 </LinearLayout>

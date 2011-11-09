@@ -1,8 +1,10 @@
 package com.robitdroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import com.robitdroid.robit.Generator;
 
@@ -24,5 +26,29 @@ public class FinalScreen extends Activity {
         Log.d("DEBUG", String.valueOf(generator.getFinal_number()));
         TextView final_number = (TextView) findViewById(R.id.final_number);
         final_number.setText(String.valueOf(generator.getFinal_number()));
+    }
+
+    /**
+     * Restart game.
+     *
+     * @param view
+     */
+    public void restartButtonClicked(View view) {
+        generator.reset();
+
+        Intent i = new Intent(view.getContext(), GameScreen.class);
+        startActivity(i);
+    }
+
+    /**
+     * "Go to main menu" button callback
+     *
+     * @param view
+     */
+    public void goToMainMenuButtonClicked(View view) {
+        generator.reset();
+
+        Intent i = new Intent(view.getContext(), RobitDroid.class);
+        startActivity(i);
     }
 }
