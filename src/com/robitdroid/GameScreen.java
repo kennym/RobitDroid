@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.*;
 
 public class GameScreen extends Activity {
+
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen);
 
@@ -22,6 +22,14 @@ public class GameScreen extends Activity {
                 Toast.makeText(GameScreen.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void yesButtonClick(View view) {
+
+    }
+
+    public void noButtonClick(View view) {
+
     }
 
     public class MyAdapter extends BaseAdapter {
@@ -50,8 +58,7 @@ public class GameScreen extends Activity {
             if (convertView == null) {
                 tv = new TextView(context);
                 tv.setLayoutParams(new GridView.LayoutParams(85, 85));
-            }
-            else {
+            } else {
                 tv = (TextView) convertView;
             }
 
