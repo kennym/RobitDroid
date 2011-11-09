@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.robitdroid.robit.Generator;
 
 public class GameScreen extends Activity {
+    private Generator generator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,24 +27,24 @@ public class GameScreen extends Activity {
     }
 
     public void yesButtonClick(View view) {
-
+        // TODO
     }
 
     public void noButtonClick(View view) {
-
+        // TODO
     }
 
     public class MyAdapter extends BaseAdapter {
 
         private Context context;
-        private String[] texts = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        private Integer[] texts = generator.generateNumbers(9);
 
         public MyAdapter(Context context) {
             this.context = context;
         }
 
         public int getCount() {
-            return 9;
+            return texts.length;
         }
 
         public Object getItem(int position) {
@@ -62,7 +64,7 @@ public class GameScreen extends Activity {
                 tv = (TextView) convertView;
             }
 
-            tv.setText(texts[position]);
+            tv.setText(Integer.toString(texts[position]));
             return tv;
         }
     }
