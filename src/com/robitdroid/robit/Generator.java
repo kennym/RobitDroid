@@ -1,5 +1,7 @@
 package com.robitdroid.robit;
 
+import java.util.ArrayList;
+
 /**
  * Generator
  * <p/>
@@ -29,16 +31,16 @@ public class Generator {
      * @param limit - Number limit
      * @return ArrayList
      */
-    public Integer[] generateNumbers(int limit) {
-        Integer[] numbers = {};
+    public ArrayList<Integer> generateNumbers(int limit) {
+        ArrayList numbers = new ArrayList();
         for (int j = 1; j <= limit; j++) {
             if (((j & 1 << this.step_number) <= 0) || (this.random_bit != 1)) {
                 if (((j & 1 << this.step_number) != 0) || (this.random_bit == 1)) {
-                    numbers[j] = 0;
+                    numbers.add(0);
                     continue;
                 }
             }
-            numbers[j] = j;
+            numbers.add(j);
         }
 
         return numbers;
@@ -120,5 +122,9 @@ public class Generator {
 
     public void genRandomBit() {
         this.random_bit = (int) (Math.random() * 2);
+    }
+
+    public void setRandom_bit(int val) {
+        this.random_bit = val;
     }
 }
