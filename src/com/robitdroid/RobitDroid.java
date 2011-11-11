@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -23,7 +25,30 @@ public class RobitDroid extends Activity {
 
         imageview = (ImageView) findViewById(R.id.ImageViewRobit);
         imageview.getLayoutParams().height = 400;
+    }
 
+    public void CreateMenu(Menu menu) {
+        MenuItem about = menu.add(0, 0, 0, "About");
+        {
+            about.setAlphabeticShortcut('a');
+        }
+        MenuItem quit = menu.add(0, 0, 0, "Quit");
+        {
+            quit.setAlphabeticShortcut('q');
+        }
+    }
+
+    private boolean MenuChoice(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                //Intent i = new Intent(null, About.class);
+                //startActivity(i);
+                return true;
+            case 1:
+                // TODO
+                return true;
+        }
+        return false;
     }
 
     public void selfStart(View view) {
