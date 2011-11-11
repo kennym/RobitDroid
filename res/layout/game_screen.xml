@@ -15,30 +15,42 @@
             android:stretchMode="columnWidth"
             android:gravity="center"
             />
+
+    <LinearLayout
+            android:id="@+id/LinearLayout02"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_alignParentBottom="true">
+        <Button
+                android:id="@+id/btn_yes"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:onClick="yesButtonClick"
+                android:text="@string/yes"
+                android:textSize="20dp"
+                android:padding="15dp"
+                />
+
+        <Button
+                android:id="@+id/btn_no"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:onClick="noButtonClick"
+                android:text="@string/no"
+                android:textSize="20dp"
+                android:padding="15dp"
+                />
+    </LinearLayout>
     <TextView
             android:id="@+id/instruction_tv"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gridview"
-            />
-    <Button
-            android:id="@+id/btn_yes"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:onClick="yesButtonClick"
-            android:text="@string/yes"
-            android:layout_below="@id/instruction_tv"
-            android:textSize="20dp"
-            android:padding="15dp"
-            />
-    <Button
-            android:id="@+id/btn_no"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:onClick="noButtonClick"
-            android:text="@string/no"
-            android:layout_below="@id/btn_yes"
-            android:textSize="20dp"
+            android:layout_above="@id/LinearLayout02"
+            android:text="Is your number in the grid above?"
+            android:textSize="30dp"
+            android:gravity="center"
             android:padding="15dp"
             />
 

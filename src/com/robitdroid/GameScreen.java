@@ -1,12 +1,19 @@
 package com.robitdroid;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.*;
 import com.robitdroid.robit.Generator;
 
@@ -23,28 +30,43 @@ public class GameScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen);
 
+        showDialog(0);
+
+        generator.reset();
         refreshGrid();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent();
+        i.setClass(GameScreen.this, RobitDroid.class);
+        startActivity(i);
+
+        return;
+    }
+
+    public void continueGame(View view) {
+        step_number++;
+
+        if (step_number >= 4) {
+            showFinalScreen(view);
+        } else {
+            refreshGrid();
+        }
     }
 
     public void yesButtonClick(View view) {
         Log.v("ROBIT", "'Yes' button clicked.");
         this.generator.yes();
-        step_number++;
-        refreshGrid();
 
-        if (step_number >= 4) {
-            showFinalScreen(view);
-        }
+        continueGame(view);
     }
 
     public void noButtonClick(View view) {
         Log.v("ROBIT", "'No' button clicked.");
         this.generator.no();
-        step_number++;
-        refreshGrid();
-        if (step_number >= 4) {
-            showFinalScreen(view);
-        }
+
+        continueGame(view);
     }
 
     private void showFinalScreen(View view) {
@@ -94,6 +116,10 @@ public class GameScreen extends Activity {
                 tv.setLayoutParams(new GridView.LayoutParams(85, 85));
                 tv.setGravity(0x11); // Center
                 tv.setTextSize(20);
+                tv.setTextColor(Color.BLACK);
+                Resources res = getResources();
+                Drawable drawable = res.getDrawable(R.drawable.black);
+                tv.setBackgroundDrawable(drawable);
             } else {
                 tv = (TextView) convertView;
             }
@@ -107,5 +133,29 @@ public class GameScreen extends Activity {
             }
             return tv;
         }
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case 0:
+                AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.icon)
+                        .setTitle("Instructions")
+                        .setMessage("Pick a number from 1 to 9, and focus on it. Now press 'Done'")
+                        .setPositiveButton("Done", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                //Toast.makeText(getBaseContext(), "OK clicked!", Toast.LENGTH_SHORT).show();
+                            }
+                        }).create();
+                // Blur the background
+                WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+                lp.dimAmount = 0.0f;
+                dialog.getWindow().setAttributes(lp);
+                dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+
+                return dialog;
+        }
+        return null;
     }
 }

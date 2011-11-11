@@ -51,4 +51,10 @@ public class FinalScreen extends Activity {
         Intent i = new Intent(view.getContext(), RobitDroid.class);
         startActivity(i);
     }
+
+    @Override
+    public void onBackPressed() {
+        // Don't do anything when back button pressed.
+        return;
+    }
 }
