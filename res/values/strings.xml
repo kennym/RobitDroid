@@ -4,4 +4,6 @@
     <string name="self_start">Start</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="instructions">Instructions</string>
+
 </resources>

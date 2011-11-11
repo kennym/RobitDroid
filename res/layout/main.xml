@@ -8,12 +8,18 @@
             android:id="@+id/ImageViewRobit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robit"
+            android:src="@drawable/intro"
             />
     <Button
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:text="@string/self_start"
             android:onClick="selfStart"
+            />
+    <Button
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="@string/instructions"
+            android:onClick="showInstructions"
             />
 </LinearLayout>
