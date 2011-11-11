@@ -18,11 +18,12 @@ public final class R {
     }
 
     public static final class id {
-        public static final int ImageViewRobit = 0x7f050005;
-        public static final int btn_no = 0x7f050004;
-        public static final int btn_yes = 0x7f050003;
+        public static final int ImageViewRobit = 0x7f050006;
+        public static final int btn_no = 0x7f050005;
+        public static final int btn_yes = 0x7f050004;
         public static final int final_number = 0x7f050000;
         public static final int gridview = 0x7f050002;
+        public static final int instruction_tv = 0x7f050003;
         public static final int restart_button = 0x7f050001;
     }
 

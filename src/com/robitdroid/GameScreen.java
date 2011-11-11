@@ -1,9 +1,7 @@
 package com.robitdroid;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,16 +24,6 @@ public class GameScreen extends Activity {
         setContentView(R.layout.game_screen);
 
         refreshGrid();
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Pick one number between 1 and 9 and don't forget it.")
-                .setCancelable(false)
-                .setNegativeButton("Done", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        builder.create();
     }
 
     public void yesButtonClick(View view) {
@@ -104,11 +92,19 @@ public class GameScreen extends Activity {
             if (convertView == null) {
                 tv = new TextView(context);
                 tv.setLayoutParams(new GridView.LayoutParams(85, 85));
+                tv.setGravity(0x11); // Center
+                tv.setTextSize(20);
             } else {
                 tv = (TextView) convertView;
             }
 
-            tv.setText(String.valueOf(texts.get(position)));
+            int number = texts.get(position);
+
+            if (number == 0) {
+                tv.setText("");
+            } else {
+                tv.setText(String.valueOf(number));
+            }
             return tv;
         }
     }
