@@ -49,7 +49,6 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/LinearLayout02"
             android:text="Is your number in the grid above?"
-            android:textSize="30dp"
             android:gravity="center"
             android:padding="15dp"
             />
