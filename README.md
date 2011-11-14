@@ -10,7 +10,7 @@ Let Robit guess the number you were thinking of, without telling him the number!
     <td><img
   src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rd2.png" width="200" /></td>
     <td><img
-  src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rs3.png" width="200" /></td>
+  src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rd3.png" width="200" /></td>
     <td><img
   src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rd4.png" width="200" /></td>
   </tr>
