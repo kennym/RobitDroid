@@ -33,4 +33,8 @@ public class RobitDroid extends Activity {
         showDialog(0);
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }
