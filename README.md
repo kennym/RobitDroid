@@ -14,7 +14,7 @@ Let Robit guess the number you were thinking of, without telling him the number!
     <td><img
   src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rd4.png" width="200" /></td>
   </tr>
-</table>
+</table
 
 How does it work?
 -----------------
@@ -32,7 +32,7 @@ Features
 Installation
 -------------
 
-You can [download the .apk](https://) from GitHub.
+You can [download the .apk](https://www.github.com/kenny/RobitDroid/Downloads) from GitHub.
 
 For instructions on how to install an .APK binary, [see this video](http://www.youtube.com/watch?v=7UOAw124y1s).
 
