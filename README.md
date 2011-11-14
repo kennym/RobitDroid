@@ -14,7 +14,7 @@ Let Robit guess the number you were thinking of, without telling him the number!
     <td><img
   src="https://github.com/kennym/RobitDroid/raw/master/screenshots/rd4.png" width="200" /></td>
   </tr>
-</table
+</table>
 
 How does it work?
 -----------------
