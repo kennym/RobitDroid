@@ -32,7 +32,7 @@ Features
 Installation
 -------------
 
-You can [download the .apk](https://www.github.com/kenny/RobitDroid/downloads) from GitHub.
+You can [download the .apk](https://www.github.com/kennym/RobitDroid/downloads) from GitHub.
 
 For instructions on how to install an .APK binary, [see this video](http://www.youtube.com/watch?v=7UOAw124y1s).
 
