@@ -32,6 +32,10 @@ Features
 Installation
 -------------
 
+Latest release:
+
+<img src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https://github.com/downloads/kennym/RobitDroid/robitdroidv1.0.1.apk" width="200" />
+
 You can [download the .apk](https://www.github.com/kennym/RobitDroid/downloads) from GitHub.
 
 For instructions on how to install an .APK binary, [see this video](http://www.youtube.com/watch?v=7UOAw124y1s).
